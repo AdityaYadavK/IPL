@@ -47,17 +47,18 @@ function App() {
         <div className='text-6xl font-black tracking-tight leading-none scale-y-170 select-none text-red-800'>
           <span className='text-white'>NEXT SEASON AWAITS!</span>
           <br></br>
-          {/* <Countdown className='text-5xl'/> */}
         </div>
-        <nav className='flex flex-col justify-around items-center w-full bg-black p-18 absolute bottom-0 social'>
-          {/* <h1 className='text-3xl mb-4'>Catch Us Here</h1> */}
-          <div className="flex gap-6 text-white text-3xl">
+        <nav className='flex justify-around items-center w-full bg-black p-14 absolute bottom-0 social'>
+          <div className="flex items-center gap-6 text-white text-3xl">
             <FaInstagram className="cursor-pointer hover:text-pink-500" />
             <FaTwitter className="cursor-pointer hover:text-blue-400" />
             <FaYoutube className="cursor-pointer hover:text-red-500" />
             <FaFacebook className="cursor-pointer hover:text-blue-600" />
+
+            <span className='text-gray-400 text-2xl'>|</span>
+            <span className='text-2xl tracking-widest select-none'>IPLT20</span>
           </div>
-      </nav>
+        </nav>
       </main>
     </section>
     <div className='h-screen'>
