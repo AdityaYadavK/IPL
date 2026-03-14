@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import logo from './assets/IPL.png';
 import video from './assets/videoplayback.mp4'
+import Champions from './assets/ChampionRCB.jpg'
 import './App.css'
+import { FaInstagram, FaTwitter, FaYoutube, FaFacebook } from 'react-icons/fa';
 import Countdown from './Countdown.jsx'
 
 function App() {
@@ -14,7 +16,7 @@ function App() {
       <video autoPlay muted loop className='absolute top-0 left-0 w-full h-full object-cover -z-10'>
         <source src={video} type='video/mp4'></source>
       </video>
-      <nav className='flex justify-around mt-2 items-center fixed w-full bg-[url(/12301.jpg)]'>
+      <nav className='flex justify-around items-center fixed w-full bg-black p-2 z-50'>
         <div className="logo">
           <img src={logo} className='w-60 h-auto cursor-pointer'></img>
         </div>
@@ -43,18 +45,31 @@ function App() {
       </nav>
       <main className='flex-1 flex justify-center items-center'>
         <div className='text-6xl font-black tracking-tight leading-none scale-y-170 select-none text-red-800'>
-          <span className='text-gray-300'>NEXT SEASON AWAITS IN THE CORNER!</span>
+          <span className='text-white'>NEXT SEASON AWAITS!</span>
           <br></br>
           {/* <Countdown className='text-5xl'/> */}
         </div>
-        <div className='flex'>
-        </div>
+        <nav className='flex flex-col justify-around items-center w-full bg-black p-18 absolute bottom-0 social'>
+          {/* <h1 className='text-3xl mb-4'>Catch Us Here</h1> */}
+          <div className="flex gap-6 text-white text-3xl">
+            <FaInstagram className="cursor-pointer hover:text-pink-500" />
+            <FaTwitter className="cursor-pointer hover:text-blue-400" />
+            <FaYoutube className="cursor-pointer hover:text-red-500" />
+            <FaFacebook className="cursor-pointer hover:text-blue-600" />
+          </div>
+      </nav>
       </main>
     </section>
     <div className='h-screen'>
-      <h1>Teams</h1>
+      {/* <h1 className='text-6xl text-yellow-200  select-none text-center champion mb-3'>meet your champions</h1> */}
+      <div>
+      <div className="logo">
+          <img src={Champions} className='w-screen h-auto cursor-pointer'></img>
+        </div>
     </div>
     </div>
+    </div>
+
     </>
   )
 }

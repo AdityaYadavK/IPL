@@ -2,10 +2,7 @@
 
 body{
   font-family: "Teko", sans-serif;
-  background-image : url('/12301.jpg');
-  background-size : cover;
-  background-position : center;
-  background-repeat : no-repeat;
+  background-color : black;
   color : white;
 
 }
