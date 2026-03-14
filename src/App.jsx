@@ -3,6 +3,7 @@ import logo from './assets/IPL.png';
 import video from './assets/videoplayback.mp4'
 import Champions from './assets/ChampionRCB.jpg'
 import './App.css'
+import bgimage from './assets/12301.jpg'
 import { FaInstagram, FaTwitter, FaYoutube, FaFacebook } from 'react-icons/fa';
 import Countdown from './Countdown.jsx'
 
@@ -16,7 +17,8 @@ function App() {
       <video autoPlay muted loop className='absolute top-0 left-0 w-full h-full object-cover -z-10'>
         <source src={video} type='video/mp4'></source>
       </video>
-      <nav className='flex justify-around items-center fixed w-full bg-black p-2 z-50'>
+      <nav className='flex justify-around items-center fixed w-full bg-black p-2 z-50'
+      /*style={{ backgroundImage: `url(${bgimage})` }} */>
         <div className="logo">
           <img src={logo} className='w-60 h-auto cursor-pointer'></img>
         </div>
@@ -48,7 +50,9 @@ function App() {
           <span className='text-white'>NEXT SEASON AWAITS!</span>
           <br></br>
         </div>
-        <nav className='flex justify-around items-center w-full bg-black p-14 absolute bottom-0 social'>
+        <nav
+          className='flex justify-around items-center w-full bg-cover bg-black bg-center bg-no-repeat p-15 absolute bottom-0 social'
+          /*style={{ backgroundImage: `url(${bgimage})` }}*/>
           <div className="flex items-center gap-6 text-white text-3xl">
             <FaInstagram className="cursor-pointer hover:text-pink-500" />
             <FaTwitter className="cursor-pointer hover:text-blue-400" />
@@ -61,16 +65,12 @@ function App() {
         </nav>
       </main>
     </section>
-    <div className='h-screen'>
-      {/* <h1 className='text-6xl text-yellow-200  select-none text-center champion mb-3'>meet your champions</h1> */}
-      <div>
-      <div className="logo">
+    <section className='h-screen flex items-center'>
+      <div className="logo flex justify-center items-center w-full">
           <img src={Champions} className='w-screen h-auto cursor-pointer'></img>
-        </div>
+      </div>
+    </section>
     </div>
-    </div>
-    </div>
-
     </>
   )
 }
