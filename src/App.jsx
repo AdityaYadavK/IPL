@@ -1,11 +1,36 @@
 import logo from './assets/IPL.png';
 import video from './assets/videoplayback.mp4'
 import Champions from './assets/ChampionRCB.jpg'
+import rcb from './assets/rcb.png'
+import csk from './assets/csk.webp'
+import mi from './assets/mi.webp'
+import kkr from './assets/kkr.webp'
+import srh from './assets/srh.webp'
+import dc from './assets/dc.webp'
+import lsg from './assets/lsg.webp'
+import gt from './assets/gt.webp'
+import rr from './assets/rr.png'
+import pbks from './assets/pbks.webp'
+
+
 import './App.css'
 import bgimage from './assets/12301.jpg'
 import { FaInstagram, FaTwitter, FaYoutube, FaFacebook } from 'react-icons/fa';
 
 function App() {
+  const teamLogos = [
+    { src: rcb, alt: 'RCB logo', name: 'Royal Challengers Bengaluru' },
+    { src: csk, alt: 'CSK logo', name: 'Chennai Super Kings' },
+    { src: kkr, alt: 'KKR logo', name: 'Kolkata Knight Riders' },
+    { src: lsg, alt: 'LSG logo', name: 'Lucknow Super Giants' },
+    { src: srh, alt: 'SRH logo', name: 'Sunrisers Hyderabad' },
+    { src: gt, alt: 'GT logo', name: 'Gujarat Titans' },
+    { src: dc, alt: 'DC logo', name: 'Delhi Capitals' },
+    { src: pbks, alt: 'PBKS logo', name: 'Punjab Kings' },
+    { src: rr, alt: 'RR logo', name: 'Rajasthan Royals' },
+    { src: mi, alt: 'MI logo', name: 'Mumbai Indians' }
+  ];
+
   return (
     <>
     <div className='flex flex-col'>
@@ -61,18 +86,39 @@ function App() {
     </section>
     <section className="relative h-screen flex items-center justify-center p-8 overflow-hidden">
 
-  <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-400 blur-3xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-400 blur-3xl"></div>
 
-  <div className="relative">
-    <img src={Champions} className="w-screen h-auto rounded-3xl" />
-    <div className="absolute inset-0 flex flex-col justify-center text-8xl font-bold text-yellow-200 [text-shadow:4px">
-      <span className="absolute left-10 bottom-40 scale-y-120">Royal</span>
-      <span className="absolute left-10 bottom-20 scale-y-120">Challengers</span>
-      <span className="absolute left-10 bottom-0 scale-y-120">Bengaluru</span>
-    </div>
-  </div>
+      <div className="relative">
+        <img src={Champions} className="w-screen h-auto rounded-3xl" />
+        <div className="absolute inset-0 flex flex-col justify-center text-8xl font-bold text-yellow-200 [text-shadow:4px">
+          <span className="absolute left-10 bottom-40 scale-y-120">Royal</span>
+          <span className="absolute left-10 bottom-20 scale-y-120">Challengers</span>
+          <span className="absolute left-10 bottom-0 scale-y-120">Bengaluru</span>
+        </div>
+      </div>
 
-</section>
+    </section>
+    <section className='h-screen bg-slate-950 px-6 flex items-center justify-center'>
+      <div className='mx-auto grid w-fit grid-cols-5 grid-rows-2 place-items-center gap-3'>
+        {teamLogos.map((team) => (
+          <div
+            key={team.alt}
+            className='cursor-pointer group relative flex h-52 w-64 flex-col items-center justify-center overflow-hidden rounded-3xl border border-slate-200/15 bg-gradient-to-b from-slate-800/95 via-slate-900/95 to-slate-950 p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_14px_28px_rgba(2,6,23,0.55)] transition-all duration-500 hover:-translate-y-1.5 hover:border-sky-300/45 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_22px_42px_rgba(14,165,233,0.24)]'
+          >
+            <div className='pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_10%,rgba(56,189,248,0.2),transparent_52%)] opacity-70 transition-opacity duration-500 group-hover:opacity-100'></div>
+            <div className='pointer-events-none absolute inset-x-5 bottom-0 h-px bg-gradient-to-r from-transparent via-sky-200/70 to-transparent'></div>
+            <img
+              src={team.src}
+              alt={team.alt}
+              className='relative z-10 h-40 w-full object-contain drop-shadow-[0_12px_16px_rgba(2,6,23,0.65)] transition-transform duration-300 ease-out group-hover:scale-110'
+            />
+            <p className='relative z-10 mt-2 text-center text-xs font-semibold uppercase tracking-[0.13em] text-slate-100 group-hover:text-sky-100'>
+              {team.name}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
     </div>
     </>
   )
